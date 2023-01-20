@@ -9,10 +9,10 @@ export default function Alert(props) {
     }
 
   return (
-    props.alert && <div className="container mt-5">
+    props.alert && <div className="container">
         <div className="row">
             <div className="col-md-3">
-                <div className={`alert alert-${props.alert.showType} alert-dismissible fade show`} role="alert">
+                <div id="alert" className={`alert alert-${props.alert.showType} alert-dismissible fade show position-fixed end-0`} role="alert">
                     <strong>{alertCaps(props.alert.showType)}:</strong> {props.alert.showMsg}
                 </div>
             </div>

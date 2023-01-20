@@ -15,10 +15,10 @@ function App() {
   const showAlertMsg =(message, type) =>{
     setalertMsg({
       showMsg : message,
-      showType : type 
+      showType : type,
     })
     setTimeout(() => {
-      setalertMsg(null)
+      setalertMsg()
     }, 2000);
   }
 
@@ -27,8 +27,7 @@ function App() {
       setScreenMode("dark")
       setModeText("Light")
       document.body.style.backgroundColor = "black";
-      showAlertMsg("Dark mode enabled", "success")
-
+      showAlertMsg("Dark mode enabled", "success");
     }
     else {
 
@@ -44,12 +43,14 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <Navbar title="EkoScorpion" mode={mode} chhngMode={screenMode} scrnModeTxt={modeText}/>
+      <Navbar title="ConvertCase" mode={mode} chhngMode={screenMode} scrnModeTxt={modeText}/>
       <Alert alert={alertMsg}/>
       <Routes>
         <Route exact path="/about" element={<About/>}>
         </Route>
         <Route exact path="/" element={<TextForm formTitle="Text Utils Form" mode={mode} chhngMode={screenMode} scrnModeTxt={modeText}  showAlertMsg={showAlertMsg}/>}>
+        </Route>
+        <Route exact path="/text-utils" element={<TextForm formTitle="Text Utils Form" mode={mode} chhngMode={screenMode} scrnModeTxt={modeText}  showAlertMsg={showAlertMsg}/>}>
         </Route>
       </Routes>
     </BrowserRouter>
