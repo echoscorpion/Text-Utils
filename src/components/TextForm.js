@@ -24,6 +24,8 @@ export default function TextForm(props) {
   const handleRestClick = () => {
     let countText = mainText.replace(/\s+/g,' ').trim();
     setMainText(countText);
+    props.showAlertMsg("Extra spaces removed", "success");
+
 
   }
 
